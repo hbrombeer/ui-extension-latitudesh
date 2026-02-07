@@ -1,0 +1,30 @@
+# Builds Helm charts for the Latitude.sh Rancher Extension and publishes
+# them to the gh-pages branch so the repo can be used as a Helm repository.
+#
+# Trigger: create a GitHub Release with a tag matching the extension package
+# folder name and version, e.g.  latitudesh-0.1.0
+# (see pkg/latitudesh/package.json → version)
+
+name: Build and Release Extension Charts
+
+on:
+  workflow_dispatch:
+  release:
+    types: [released]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./
+
+jobs:
+  build-extension-charts:
+    uses: rancher/dashboard/.github/workflows/build-extension-charts.yml@master
+    permissions:
+      actions: write
+      contents: write
+      deployments: write
+      pages: write
+    with:
+      target_branch: gh-pages
+      tagged_release: ${{ github.ref_name }}

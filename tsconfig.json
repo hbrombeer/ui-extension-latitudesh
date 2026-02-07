@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": false,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "@shell/*": ["./node_modules/@rancher/shell/shell/*"],
+      "@components/*": ["./node_modules/@rancher/shell/shell/components/*"],
+      "@pkg/*": ["./pkg/*"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "pkg/**/*.ts",
+    "pkg/**/*.tsx",
+    "pkg/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

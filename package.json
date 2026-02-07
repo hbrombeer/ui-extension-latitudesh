@@ -1,0 +1,19 @@
+{
+  "name": "ui-extension-latitudesh",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Rancher Dashboard Extension for Latitude.sh node driver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/latitudesh/ui-extension-latitudesh.git"
+  },
+  "scripts": {
+    "dev": "shell-pkg dev",
+    "build-pkg": "shell-pkg build",
+    "serve-pkgs": "serve-pkgs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rancher/shell": "^3.0.0"
+  }
+}

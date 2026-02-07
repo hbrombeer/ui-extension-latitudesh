@@ -1,0 +1,15 @@
+{
+  "name": "latitudesh",
+  "version": "0.1.0",
+  "description": "Latitude.sh node driver extension for Rancher Dashboard",
+  "rancher": {
+    "annotations": {
+      "catalog.cattle.io/certified": "partner",
+      "catalog.cattle.io/display-name": "Latitude.sh",
+      "catalog.cattle.io/kube-version": ">= 1.16.0-0",
+      "catalog.cattle.io/rancher-version": ">= 2.9.0-0",
+      "catalog.cattle.io/ui-extensions-version": ">= 3.0.0 < 4.0.0"
+    }
+  },
+  "icon": "https://www.latitude.sh/favicon.ico"
+}

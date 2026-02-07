@@ -1,0 +1,33 @@
+# Builds an Extension Catalog Image (ECI) for the Latitude.sh Rancher Extension
+# and pushes it to the GitHub Container Registry (ghcr.io).
+# Useful for air-gapped environments or private registries.
+#
+# Trigger: create a GitHub Release with a tag matching the root package name
+# and version, e.g.  latitudesh-extension-0.1.0
+# (see ./package.json → name + version)
+
+name: Build and Release Extension Catalog Image
+
+on:
+  workflow_dispatch:
+  release:
+    types: [released]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./
+
+jobs:
+  build-extension-catalog:
+    uses: rancher/dashboard/.github/workflows/build-extension-catalog.yml@master
+    permissions:
+      actions: write
+      contents: read
+      packages: write
+    with:
+      registry_target: ghcr.io
+      registry_user: ${{ github.actor }}
+      tagged_release: ${{ github.ref_name }}
+    secrets:
+      registry_token: ${{ secrets.GITHUB_TOKEN }}
