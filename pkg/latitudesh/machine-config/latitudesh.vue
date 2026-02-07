@@ -289,13 +289,14 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledSelect
-          v-model="value.project"
+          :value="value.project"
           :label="t('cluster.machineConfig.latitudesh.project.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.project.placeholder')"
           :options="projectOptions"
           :disabled="isDisabled"
           :mode="mode"
           required
+          @input="value.project = $event"
         />
       </div>
     </div>
@@ -304,13 +305,14 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledSelect
-          v-model="value.region"
+          :value="value.region"
           :label="t('cluster.machineConfig.latitudesh.region.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.region.placeholder')"
           :options="regionOptions"
           :disabled="isDisabled"
           :mode="mode"
           required
+          @input="value.region = $event"
         />
       </div>
     </div>
@@ -319,13 +321,14 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledSelect
-          v-model="value.plan"
+          :value="value.plan"
           :label="t('cluster.machineConfig.latitudesh.plan.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.plan.placeholder')"
           :options="planOptions"
           :disabled="isDisabled"
           :mode="mode"
           required
+          @input="value.plan = $event"
         />
       </div>
     </div>
@@ -334,13 +337,14 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledSelect
-          v-model="value.os"
+          :value="value.os"
           :label="t('cluster.machineConfig.latitudesh.os.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.os.placeholder')"
           :options="osOptions"
           :disabled="isDisabled"
           :mode="mode"
           required
+          @input="value.os = $event"
         />
       </div>
     </div>
@@ -349,11 +353,12 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledInput
-          v-model="value.hostname"
+          :value="value.hostname"
           :label="t('cluster.machineConfig.latitudesh.hostname.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.hostname.placeholder')"
           :disabled="isDisabled"
           :mode="mode"
+          @input="value.hostname = $event"
         />
       </div>
     </div>
@@ -362,12 +367,13 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledSelect
-          v-model="value.sshKey"
+          :value="value.sshKey"
           :label="t('cluster.machineConfig.latitudesh.sshKey.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.sshKey.placeholder')"
           :options="sshKeyOptions"
           :disabled="isDisabled"
           :mode="mode"
+          @input="value.sshKey = $event"
         />
       </div>
     </div>
@@ -376,12 +382,13 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledSelect
-          v-model="value.userdata"
+          :value="value.userdata"
           :label="t('cluster.machineConfig.latitudesh.userdata.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.userdata.placeholder')"
           :options="userDataOptions"
           :disabled="isDisabled"
           :mode="mode"
+          @input="value.userdata = $event"
         />
       </div>
     </div>
