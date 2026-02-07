@@ -1,0 +1,13 @@
+plugin/latitudesh-0.1.2.umd.min.37.js
+plugin/latitudesh-0.1.2.umd.min.37.js.map
+plugin/latitudesh-0.1.2.umd.min.378.js
+plugin/latitudesh-0.1.2.umd.min.378.js.map
+plugin/latitudesh-0.1.2.umd.min.780.js
+plugin/latitudesh-0.1.2.umd.min.780.js.map
+plugin/latitudesh-0.1.2.umd.min.cloud-credential.js
+plugin/latitudesh-0.1.2.umd.min.cloud-credential.js.map
+plugin/latitudesh-0.1.2.umd.min.js
+plugin/latitudesh-0.1.2.umd.min.js.map
+plugin/latitudesh-0.1.2.umd.min.machine-config.js
+plugin/latitudesh-0.1.2.umd.min.machine-config.js.map
+plugin/package.json

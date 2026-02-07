@@ -1,0 +1,16 @@
+{
+  "name": "latitudesh",
+  "version": "0.1.2",
+  "description": "Latitude.sh node driver extension for Rancher Dashboard",
+  "rancher": true,
+  "icon": "https://www.latitude.sh/favicon.ico",
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0"
+  },
+  "files": [
+    "**/*"
+  ],
+  "main": "latitudesh-0.1.2.umd.min.js"
+}
