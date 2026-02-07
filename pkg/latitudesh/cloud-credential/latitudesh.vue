@@ -30,36 +30,6 @@ export default {
       this.$emit('validationChanged', !!neu);
     },
   },
-
-  methods: {
-    // Optional: test the credential by calling the API
-    async test() {
-      try {
-        const token = this.value.decodedData.token;
-
-        if (!token) {
-          return { errors: ['API Token is required'] };
-        }
-
-        // Quick validation: try to list projects
-        const res = await this.$store.dispatch('management/request', {
-          url:     '/meta/proxy/api.latitude.sh/projects?page[size]=1',
-          headers: {
-            'Authorization': `Bearer ${ token }`,
-            'Accept':        'application/json',
-          },
-        });
-
-        if (res && res.data) {
-          return true;
-        }
-
-        return { errors: ['Could not validate API token'] };
-      } catch (e) {
-        return { errors: [`API token validation failed: ${ e.message || e }`] };
-      }
-    },
-  },
 };
 </script>
 
