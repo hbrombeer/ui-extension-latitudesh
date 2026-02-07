@@ -10,7 +10,9 @@
   "scripts": {
     "dev": "shell-pkg dev",
     "build-pkg": "shell-pkg build",
-    "serve-pkgs": "serve-pkgs"
+    "serve-pkgs": "serve-pkgs",
+    "publish-pkgs": "./node_modules/@rancher/shell/scripts/extension/publish",
+    "parse-tag-name": "./node_modules/@rancher/shell/scripts/extension/parse-tag-name"
   },
   "dependencies": {},
   "devDependencies": {
