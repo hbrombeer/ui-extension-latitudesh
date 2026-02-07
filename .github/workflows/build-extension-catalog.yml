@@ -3,7 +3,7 @@
 # Useful for air-gapped environments or private registries.
 #
 # Trigger: create a GitHub Release with a tag matching the root package name
-# and version, e.g.  latitudesh-extension-0.1.0
+# and version, e.g.  ui-extension-latitudesh-0.1.0
 # (see ./package.json → name + version)
 
 name: Build and Release Extension Catalog Image
