@@ -81,7 +81,7 @@ export default {
       const [projectsRes, regionsRes, plansRes, osRes, sshKeysRes, userDataRes] = await Promise.all([
         this.latitudeGet('/projects?page[size]=100'),
         this.latitudeGet('/regions?page[size]=100'),
-        this.latitudeGet('/plans?filter[in_stock]=true&page[size]=100'),
+        this.latitudeGet('/plans?page[size]=100'),
         this.latitudeGet('/plans/operating_systems?page[size]=100'),
         this.latitudeGet('/ssh_keys?page[size]=100'),
         this.latitudeGet('/user_data?page[size]=100'),
@@ -138,6 +138,8 @@ export default {
 
         return { label: parts.join(' \u2013 '), value: a.slug };
       });
+
+      this.plansRaw = plansRes.data || [];
 
       // ── Map Operating Systems ──────────────────────────────────────────
       this.osOptions = (osRes.data || []).map((o) => {
@@ -198,6 +200,7 @@ export default {
       projectOptions:  [],
       regionOptions:   [],
       planOptions:     [],
+      plansRaw:        [],
       osOptions:       [],
       sshKeyOptions:   [],
       userDataOptions: [],
@@ -228,6 +231,33 @@ export default {
 
     isDisabled() {
       return this.disabled || this.busy || this.isView;
+    },
+
+    planOptionsWithStock() {
+      const region = this.value?.region;
+
+      return this.planOptions.map((opt) => {
+        if (!region) return opt;
+        const plan = this.plansRaw.find((p) => p.attributes?.slug === opt.value);
+        const matchingRegion = plan?.attributes?.regions?.find((r) =>
+          r.locations?.in_stock?.includes(region)
+        );
+        const inStock = !!matchingRegion;
+        const stockLevel = matchingRegion?.stock_level || plan?.attributes?.stock_level;
+        let suffix;
+
+        if (inStock) {
+          const inStockLabel = this.t('cluster.machineConfig.latitudesh.plan.inStock');
+
+          suffix = stockLevel && stockLevel !== 'unavailable'
+            ? ` \u2013 ${ inStockLabel } (${ stockLevel })`
+            : ` \u2013 ${ inStockLabel }`;
+        } else {
+          suffix = ` \u2013 ${ this.t('cluster.machineConfig.latitudesh.plan.outOfStock') }`;
+        }
+
+        return { ...opt, label: `${ opt.label }${ suffix }` };
+      });
     },
   },
 
@@ -324,7 +354,7 @@ export default {
           :value="value.plan"
           :label="t('cluster.machineConfig.latitudesh.plan.label')"
           :placeholder="t('cluster.machineConfig.latitudesh.plan.placeholder')"
-          :options="planOptions"
+          :options="planOptionsWithStock"
           :disabled="isDisabled"
           :mode="mode"
           required

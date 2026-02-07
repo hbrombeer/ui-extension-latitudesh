@@ -10,7 +10,7 @@ spec:
   builtin: false
   addCloudCredential: false
   displayName: latitudesh
-  url: https://github.com/hbrombeer/docker-machine-driver-latitudesh/releases/download/v0.2.0/docker-machine-driver-latitudesh_0.2.0_linux_amd64
+  url: https://github.com/hbrombeer/docker-machine-driver-latitudesh/releases/download/v0.3.0/docker-machine-driver-latitudesh_0.3.0_linux_amd64
   whitelistDomains:
   - github.com
   - api.latitude.sh

@@ -10,6 +10,8 @@ cluster:
       plan:
         label: "Plan"
         placeholder: "Select a plan..."
+        inStock: "In Stock"
+        outOfStock: "Out of Stock"
       os:
         label: "Operating System"
         placeholder: "Select an operating system..."
