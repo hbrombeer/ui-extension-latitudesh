@@ -45,7 +45,7 @@ export default {
           :mode="mode"
           :disabled="isView"
           required
-          @input="value.setData('apiToken', $event.target ? $event.target.value : $event)"
+          @update:value="value.setData('apiToken', $event)"
         />
         <p class="text-muted mt-5">
           {{ t('cluster.credential.latitudesh.apiToken.help') }}

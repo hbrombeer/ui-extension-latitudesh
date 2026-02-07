@@ -296,7 +296,7 @@ export default {
           :disabled="isDisabled"
           :mode="mode"
           required
-          @input="value.project = $event"
+          @update:value="value.project = $event"
         />
       </div>
     </div>
@@ -312,7 +312,7 @@ export default {
           :disabled="isDisabled"
           :mode="mode"
           required
-          @input="value.region = $event"
+          @update:value="value.region = $event"
         />
       </div>
     </div>
@@ -328,7 +328,7 @@ export default {
           :disabled="isDisabled"
           :mode="mode"
           required
-          @input="value.plan = $event"
+          @update:value="value.plan = $event"
         />
       </div>
     </div>
@@ -344,7 +344,7 @@ export default {
           :disabled="isDisabled"
           :mode="mode"
           required
-          @input="value.os = $event"
+          @update:value="value.os = $event"
         />
       </div>
     </div>
@@ -358,7 +358,7 @@ export default {
           :placeholder="t('cluster.machineConfig.latitudesh.hostname.placeholder')"
           :disabled="isDisabled"
           :mode="mode"
-          @input="value.hostname = $event"
+          @update:value="value.hostname = $event"
         />
       </div>
     </div>
@@ -373,7 +373,7 @@ export default {
           :options="sshKeyOptions"
           :disabled="isDisabled"
           :mode="mode"
-          @input="value.sshKey = $event"
+          @update:value="value.sshKey = $event"
         />
       </div>
     </div>
@@ -388,7 +388,7 @@ export default {
           :options="userDataOptions"
           :disabled="isDisabled"
           :mode="mode"
-          @input="value.userdata = $event"
+          @update:value="value.userdata = $event"
         />
       </div>
     </div>
