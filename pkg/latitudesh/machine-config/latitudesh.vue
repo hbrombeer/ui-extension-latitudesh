@@ -238,7 +238,7 @@ export default {
 
       const res = await fetch(url, {
         headers: {
-          'X-Api-CattleAuth-Header': `Bearer credId=${ this.credentialId } tokenField=token`,
+          'X-Api-CattleAuth-Header': `Bearer credId=${ this.credentialId } tokenField=apiToken`,
           'Accept':                   'application/json',
         },
       });

@@ -25,7 +25,7 @@ export default {
   },
 
   watch: {
-    'value.decodedData.token'(neu) {
+    'value.decodedData.apiToken'(neu) {
       // Emit validation status whenever the token changes
       this.$emit('validationChanged', !!neu);
     },
@@ -38,17 +38,17 @@ export default {
     <div class="row mb-20">
       <div class="col span-6">
         <LabeledInput
-          :value="value.decodedData.token"
-          :label="t('cluster.credential.latitudesh.token.label')"
-          :placeholder="t('cluster.credential.latitudesh.token.placeholder')"
+          :value="value.decodedData.apiToken"
+          :label="t('cluster.credential.latitudesh.apiToken.label')"
+          :placeholder="t('cluster.credential.latitudesh.apiToken.placeholder')"
           type="password"
           :mode="mode"
           :disabled="isView"
           required
-          @input="value.setData('token', $event)"
+          @input="value.setData('apiToken', $event)"
         />
         <p class="text-muted mt-5">
-          {{ t('cluster.credential.latitudesh.token.help') }}
+          {{ t('cluster.credential.latitudesh.apiToken.help') }}
           <a
             href="https://www.latitude.sh/dashboard/settings/api-keys"
             target="_blank"

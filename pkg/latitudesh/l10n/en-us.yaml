@@ -26,7 +26,7 @@ cluster:
         loadFailed: "Failed to load options from Latitude.sh API"
   credential:
     latitudesh:
-      token:
+      apiToken:
         label: "API Token"
-        placeholder: "lat_xxxxxxxxxxxx"
+        placeholder: "Enter your Latitude.sh API token"
         help: "Create an API token in the Latitude.sh Dashboard under Settings → API Keys."
