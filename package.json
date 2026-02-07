@@ -8,14 +8,19 @@
     "url": "https://github.com/latitudesh/ui-extension-latitudesh.git"
   },
   "scripts": {
-    "dev": "shell-pkg dev",
-    "build-pkg": "shell-pkg build",
-    "serve-pkgs": "serve-pkgs",
+    "dev": "NODE_ENV=dev ./node_modules/.bin/vue-cli-service serve",
+    "build-pkg": "./node_modules/@rancher/shell/scripts/build-pkg.sh",
+    "serve-pkgs": "./node_modules/@rancher/shell/scripts/serve-pkgs",
     "publish-pkgs": "./node_modules/@rancher/shell/scripts/extension/publish",
     "parse-tag-name": "./node_modules/@rancher/shell/scripts/extension/parse-tag-name"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "@rancher/shell": "^3.0.0"
+  "dependencies": {
+    "@rancher/shell": "^3.0.0",
+    "cache-loader": "^4.1.0",
+    "node-polyfill-webpack-plugin": "^3.0.0"
+  },
+  "resolutions": {
+    "@types/node": "~20.10.0",
+    "@types/lodash": "4.17.5"
   }
 }
