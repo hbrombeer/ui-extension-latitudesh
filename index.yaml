@@ -13,6 +13,28 @@ entries:
       catalog.cattle.io/ui-component: plugins
       catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
     apiVersion: v2
+    appVersion: 0.1.5
+    created: "2026-02-07T20:32:42.591622494Z"
+    description: Latitude.sh node driver extension for Rancher Dashboard
+    digest: 5f642ba1d6d8a9b045568fd48d1afaccc5749ec0ebe46de6a03cf920e9e2e6d6
+    icon: https://www.latitude.sh/favicon.ico
+    name: latitudesh
+    type: application
+    urls:
+    - assets/latitudesh/latitudesh-0.1.5.tgz
+    version: 0.1.5
+  - annotations:
+      catalog.cattle.io/certified: partner
+      catalog.cattle.io/display-name: Latitude.sh
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/permits-os: linux, windows
+      catalog.cattle.io/rancher-version: '>= 2.9.0-0'
+      catalog.cattle.io/scope: management
+      catalog.cattle.io/ui-component: plugins
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    apiVersion: v2
     appVersion: 0.1.4
     created: "2026-02-07T20:22:02.18838483Z"
     description: Latitude.sh node driver extension for Rancher Dashboard
@@ -111,4 +133,4 @@ entries:
     urls:
     - assets/latitudesh/latitudesh-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-07T20:22:02.187866103Z"
+generated: "2026-02-07T20:32:42.591044476Z"

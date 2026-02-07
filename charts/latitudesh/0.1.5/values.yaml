@@ -3,9 +3,10 @@ fullnameOverride: ""
 plugin:
   enabled: true
   versionOverride: ""
-  endpoint: https://raw.githubusercontent.com/github/main/extensions/latitudesh/0.1.5
+  endpoint: >-
+    https://raw.githubusercontent.com/hbrombeer/ui-extension-latitudesh/gh-pages/extensions/latitudesh/0.1.5
   compressedEndpoint: >-
-    https://raw.githubusercontent.com/github/main/extensions/latitudesh/0.1.5.tgz
+    https://raw.githubusercontent.com/hbrombeer/ui-extension-latitudesh/gh-pages/extensions/latitudesh/0.1.5.tgz
   noCache: false
   noAuth: false
   metadata:
