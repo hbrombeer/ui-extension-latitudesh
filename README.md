@@ -27,9 +27,31 @@ All API calls are proxied through Rancher (`/meta/proxy/api.latitude.sh/...`) us
 ## Prerequisites
 
 - Rancher v2.9+ with the Dashboard UI
-- The [`docker-machine-driver-latitudesh`](https://github.com/latitudesh/docker-machine-driver-latitudesh) binary registered as a Node Driver
-- `api.latitude.sh` added to the Node Driver's whitelist domains
 - Node.js 18+ and yarn (for development)
+
+### Installing the Node Driver
+
+> **Important:** Do **not** use the Rancher UI ("Add Node Driver") to register the driver. The UI generates a random name (e.g. `nd-r422x`), but Rancher's provisioning system expects the NodeDriver resource to be named `latitudesh`. A mismatched name causes the error `nodedrivers.management.cattle.io "latitudesh" not found`.
+
+Instead, apply the included manifest with `kubectl`:
+
+```bash
+kubectl apply -f nodedriver.yaml
+```
+
+This creates a NodeDriver named `latitudesh` with the correct annotations (`privateCredentialFields`, `passwordFields`) and `api.latitude.sh` in the whitelist.
+
+To update the driver binary version, edit `spec.url` in `nodedriver.yaml` and re-apply:
+
+```bash
+kubectl apply -f nodedriver.yaml
+```
+
+Verify the driver is active:
+
+```bash
+kubectl get nodedriver latitudesh -o jsonpath='name={.metadata.name} active={.spec.active}'
+```
 
 ## Development
 
